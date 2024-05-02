@@ -1,6 +1,5 @@
 FROM openjdk:21
-EXPOSE 4444
-ADD target/devops-integration.jar devops-integration.jar
-ENTRYPOINT ["java ","-jar","/devops-integration.jar"]
+ADD target/devops-integration.jar deneme
+ENTRYPOINT ["java ","-jar","deneme"]
 
 
