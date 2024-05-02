@@ -1,11 +1,5 @@
-# Windows tabanlı bir container imajı belirlenir
-FROM mcr.microsoft.com/windows/servercore:ltsc2019
-
-# Yapılan işlem ve servislerin ağ bağlantı noktası belirlenir
+FROM open jdk:21
 EXPOSE 8081
-
-# Gerekli dosyaların Docker imajına kopyalanması sağlanır
-COPY target\devops-integration.jar devops-integration.jar
-
-# Container çalıştırıldığında otomatik olarak başlatılacak komut belirlenir
-CMD ["java", "-jar", "devops-integration.jar"]
+ADD target/devops-integration.jar devops-integration.jar
+ENTRYPOINT ["java ","-jar","/devops-integration.jar"]
+COPY target/your-application.jar /app/your-application.jar
